@@ -24,16 +24,16 @@
   "homepage": "https://github.com/skylerwestby/drudgedredd",
   "dependencies": {
     "co-views": "^0.3.0",
-    "feedparser": "^1.0.1",
+    "feed-read": "0.0.1",
     "koa": "^0.18.0",
     "koa-bodyparser": "^1.4.0",
     "koa-logger": "^1.2.2",
     "koa-override-method": "^1.0.0",
     "koa-route": "^2.4.0",
+    "koa-static": "^1.4.9",
     "mocha": "^2.0.1",
     "nodemon": "^1.3.7",
     "q": "^1.2.0",
-    "request": "^2.55.0",
     "swig": "^1.4.2"
   }
 }

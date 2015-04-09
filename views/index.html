@@ -1,12 +1,31 @@
 <html>
 <head>
-  <title>Blog</title>
+  <title>Drudge Dredd</title>
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
-  <ul>
-    {% for item in items %}
-      <li>{{ item }}</li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-unstyled">
+          {% for item in items %}
+            <li>
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <h3>
+                    <a href="{{item.link}}">{{item.title}}</a>
+                  </h3>
+                  <p>
+                    {{item.content | raw}}
+                  </p>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

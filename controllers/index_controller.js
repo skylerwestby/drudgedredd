@@ -1,4 +1,6 @@
-const render = require("../render");
+const render = require("../render"),
+      config = require("../config"),
+      Feed   = require("../models/feed");
 
 const IndexController = {
   routes: function() {
@@ -7,7 +9,10 @@ const IndexController = {
     ];
   },
   get: function *() {
-    this.body = yield render("index", { items: ["hello", "world"] });
+
+    var items = yield Feed.read(config.app.feed);
+
+    this.body = yield render("index", { items: items });
   }
 };
 

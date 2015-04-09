@@ -4,10 +4,13 @@ var config         = require("./config"),
     overrideMethod = require("koa-override-method"),
     logger         = require("koa-logger"),
     route          = require("koa-route"),
-    routes         = require("./routes")(app, route);
+    routes         = require("./routes")(app, route),
+    static         = require("koa-static"),
+    path           = require("path");
 
 app.use(logger());
 app.use(bodyParser());
+app.use(static(path.join(__dirname, "public")));
 app.use(function *(next) {
   this.request.method = overrideMethod.call(this, this.request.body);
   yield next;
